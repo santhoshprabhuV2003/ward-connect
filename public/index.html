@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mobilexpress">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WardConnect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/ward.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body ng-controller="indexctrl">
+    <header>
+      <nav>
+      <ul class="nav_links">
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./ward.html">WARDS</a></li>
+          <li><a href="./explore.html">EXPLORE</a></li>
+          <li><a href="./report.html">REPORT</a></li>
+          <li><a href="./login.html" ng-if="!username">LOGIN</a></li>
+          <li><a ng-if="username" ng-click="logout()">LOGOUT</a></li>
+      </ul>
+      </nav>
+      <a href="./signup.html" class="nav_button" ng-if="!username"><button>SIGN UP</button></a>
+      <a href="./index.html" class="nav_button" ng-if="username"><button>{{username | uppercase}}</button></a>
+  </header>
+
+  <div class="service-head">
+      <p>WardConnect Services</p>
+  </div>
+      
+  <div class="main-area">
+      <div class="centered">
+      <div class="service-cards">
+          <article class="service-card" ng-repeat="service in services">
+              <a href="#">
+              <picture class="thumbnail">
+                  <img class="service-img" ng-src='{{service.imagesource}}' alt="serviceimage">
+              </picture>
+              <div class="card-content">
+                  <h2>{{service.title | uppercase}}</h2>
+                  <p>{{service.description}}</p>
+              </div>
+              </a>
+          </article>
+      </div>
+      </div>
+  </div>
+  
+  <footer>
+      <div class="container">
+          <a href="#"><i class="fa fa-instagram fa-2x social"></i></a>
+          <a href="#"><i class="fa fa-facebook fa-2x social"></i></a>
+          <a href="#"><i class="fa fa-twitter fa-2x social"></i></a>
+          <a href="#"><i class="fa fa-linkedin fa-2x social"></i></a>
+          <a href="#"><i class="fa fa-youtube-play fa-2x social"></i></a>
+      </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.8.3/angular-messages.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-animate/1.8.3/angular-animate.min.js"></script>
+  <script type="module" src="./js/indexcontroller.js"></script>
+  </body>
+</html>

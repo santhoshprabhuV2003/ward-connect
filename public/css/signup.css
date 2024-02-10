@@ -1,0 +1,51 @@
+.signup { 
+    width: 360px; 
+    padding: 10px; 
+    border: 2px solid gray;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.adminctrl {
+    width: 360px;
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
+.info {
+    border-radius: 5px;
+}
+
+.modify {
+    width: 170px;
+}
+
+.admin {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.report {
+    width: 460px; 
+    padding: 10px; 
+    border: 2px solid gray;
+    border-radius: 5px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

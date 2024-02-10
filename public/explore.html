@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mobilexpress">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WardConnect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/ward.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body ng-controller="explorectrl">
+    <header>
+        <nav>
+        <ul class="nav_links">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./ward.html">WARDS</a></li>
+            <li><a href="./explore.html">EXPLORE</a></li>
+            <li><a href="./report.html">REPORT</a></li>
+            <li><a href="./login.html" ng-if="!username">LOGIN</a></li>
+        </ul>
+        </nav>
+        <a href="./signup.html" class="nav_button" ng-if="!username"><button>SIGN UP</button></a>
+        <a href="./index.html" class="nav_button" ng-if="username"><button>{{username | uppercase}}</button></a>
+    </header>
+
+    <div>
+        <div class="product-list-container">
+            <div class="filter-section">
+                <p class="filter-title">Select Ward</p>
+                <div class="filter-data">
+                    <select class="filter-dropdown" ng-model="selectedWard">
+                        <option value="">Select</option>
+                        <option ng-repeat="ward in wards" value="{{ward}}">{{ward}}</option>
+                    </select>
+                </div>
+        
+                <p class="filter-title">Select Landmark</p>
+                <div class="filter-data">
+                    <label><input type="radio" name="landmark" ng-model="selectedlandmark" value="phcc"> Primary Health Care Centre</label>
+                    <label><input type="radio" name="landmark" ng-model="selectedlandmark" value="gh"> Hospital</label>
+                    <label><input type="radio" name="landmark" ng-model="selectedlandmark" value="fs"> Fire Station</label>
+                </div>
+        
+            </div>
+        
+            <h1 class="product-header">Explore Your Ward</h1>
+            <div class="products-container">
+                <div class="product-cards">
+                    <div ng-repeat="landmark in filteredLandMarks | filter: selectedWard">
+                        <landmark landmark="landmark"></landmark>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.8.2/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-animate/1.8.2/angular-animate.min.js"></script>
+    <script type="module" src="./js/explorecontroller.js"></script>
+</body>
+</html>

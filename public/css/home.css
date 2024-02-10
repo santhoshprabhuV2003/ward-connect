@@ -1,0 +1,67 @@
+.main-area {
+    padding-left: 180px;
+	padding-right: 180px;
+	padding-top: 35px;
+}
+
+.p {
+	margin-bottom: 1.5em;
+}
+
+.service-img {
+	display: block;
+	border: 0;
+	width: 100%;
+	height: auto;
+}
+
+.service-head {
+    height: 130px;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
+
+.service-head p {
+    padding-top: 35px;
+    font-size: 50px;
+}
+
+.service-card {
+	background: white;
+	margin-bottom: 2em;	
+}
+
+.service-card a {
+	color: black;
+	text-decoration: none;
+}
+
+.service-card a:hover {
+	box-shadow: 3px 3px 8px black;
+}
+
+.card-content {
+	padding: 1.4em;
+}
+
+.card-content h2 {
+	margin-top: 0;
+	margin-bottom: .5em;
+	text-align: center;
+}
+
+.card-content p {
+	font-size: 110%;
+	text-align: center;
+}
+
+.service-cards {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.service-card {
+	flex: 0 1 24%;
+}

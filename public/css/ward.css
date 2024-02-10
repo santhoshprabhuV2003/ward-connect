@@ -1,0 +1,93 @@
+/* styling for the whole product list container, including the filters on the side */
+.product-list-container {
+    display: grid;
+    grid-template-rows: 55px calc(100vh - 55px);
+    grid-template-columns: 220px auto;
+    grid-template-areas:'filter header''filter products';
+    }
+    
+    /* styling for just the main list of products displayed on screen */
+    .product-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: header;
+    margin-top: 10px;
+    }
+    
+    .products-container {
+    grid-area: products;
+    margin: 20px;
+    }
+    
+    .product-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
+    
+    .product-container {
+    background: white;
+    margin-bottom: 2em;	
+    flex: 0 1 24%;
+    width: 400px;
+    padding-top: 10px;
+    }
+    
+    .product-content {
+    padding: 0.7em;
+    text-align: center;
+    }
+    
+    .product-content h3 {
+    margin-top: 0;
+    margin-bottom: .5em;
+    }
+    
+    .product-content p {
+    font-size: 110%;
+    margin-bottom: .5em;
+    }
+    
+    picture img {
+    display: block;
+    border: 0;
+    width: 120px;
+    height: 170px;
+    margin: 0 auto;
+    }
+    
+    /* styling for the filters */
+    .filter-section {
+    padding: 10px;
+    grid-area: filter;
+    }
+    
+    .filter-title {
+    font-weight: 600;
+    }
+    
+    .filter-data {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-top: 2px solid #012025;
+    }
+    
+    .filter-item {
+    margin: 8px 16px;
+    }
+    
+    .filter-checkbox {
+    margin-left: 10px;
+    }
+    
+    .filter-dropdown {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 5px;
+    }
+    
+    .filter-data label {
+        margin: 15px
+    }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mobilexpress">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WardConnect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/ward.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body ng-controller="reportctrl">
+    <header>
+        <nav>
+        <ul class="nav_links">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./ward.html">WARDS</a></li>
+            <li><a href="./explore.html">EXPLORE</a></li>
+            <li><a href="./report.html">REPORT</a></li>
+            <li><a href="./login.html" ng-if="!username">LOGIN</a></li>
+        </ul>
+        </nav>
+        <a href="./signup.html" class="nav_button" ng-if="!username"><button>SIGN UP</button></a>
+        <a href="./index.html" class="nav_button" ng-if="username"><button>{{username | uppercase}}</button></a>
+    </header>
+
+    <div class="report">
+        <h2>Report an Issue</h2>
+        <p>Please fill out this form to report an issue.</p>
+        <form ng-submit="reportIssue()" method="post">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="field" ng-model="issueData.username" required>
+            </div>
+            <div>
+                <label for="zone">Zone:</label>
+                <select id="zone" name="zone" class="field" ng-model="issueData.zone" ng-change="updateWards()" required>
+                    <option value="East Zone">East Zone</option>
+                    <option value="West Zone">West Zone</option>
+                    <option value="Central Zone">Central Zone</option>
+                    <option value="North Zone">North Zone</option>
+                    <option value="South Zone">South Zone</option>
+                </select>
+            </div>
+            <div>
+                <label for="ward">Ward:</label>
+                <select id="ward" name="ward" class="field" ng-model="issueData.ward" ng-change="updateZone()" required>
+                    <option ng-repeat="ward in availableWards" value="{{ward}}">{{ward}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="issue">Issue:</label>
+                <select id="issue" name="issue" class="field" ng-model="issueData.issue" required>
+                    <option value="Road Maintenance">Road Maintenance</option>
+                    <option value="Sanitation">Sanitation</option>
+                    <option value="Water Supply">Water Supply</option>
+                    <option value="Electricity">Electricity</option>
+                    <option value="OtherIssue">Other Issue</option>
+                </select>
+            </div>
+            <div>
+                <label for="image">Image:</label>
+                <input type="file" id="ward-issue-image" name="image" accept="image/*" class="field" ng-model="issueData.image" required>
+            </div>
+            <div>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" class="field" ng-model="issueData.description" required></textarea>
+            </div>
+            <button type="submit">REPORT ISSUE</button>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.8.2/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-animate/1.8.2/angular-animate.min.js"></script>
+    <script type="module" src="./js/reportcontroller.js"></script>
+</body>
+</html>

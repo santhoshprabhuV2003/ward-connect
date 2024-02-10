@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mobilexpress">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WardConnect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/ward.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body ng-controller="signupctrl">
+    <header>
+        <nav>
+        <ul class="nav_links">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./ward.html">WARDS</a></li>
+            <li><a href="./explore.html">EXPLORE</a></li>
+            <li><a href="./report.html">REPORT</a></li>
+            <li><a href="./login.html">LOGIN</a></li>
+        </ul>
+        </nav>
+        <a href="./signup.html" class="nav_button"><button>SIGN UP</button></a>
+    </header>
+
+    <div class="signup">
+        <h2>Sign Up</h2>
+        <p>Please fill this form to create an account.</p>
+        <form ng-submit="signup()" method="post">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="field" ng-model="userData.username" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="field" ng-model="userData.email" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="field" ng-model="userData.password" ng-minlength="6" ng-maxlength="10" required>
+            </div>
+            <div>
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" class="field" ng-model="confirmPassword" required>
+            </div>
+            <button type="submit">SIGN UP</button>
+            <p>Already have an account!! <a href="./login.html">Click here to Login</a></p>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.8.2/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-animate/1.8.2/angular-animate.min.js"></script>
+    <script type="module" src="./js/signupcontroller.js"></script>
+</body>
+</html>
