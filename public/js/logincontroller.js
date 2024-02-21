@@ -1,4 +1,4 @@
-import { app, loginWardConnect } from './config.js';
+import { app, loginWardConnect, loginByGoogleAuth0 } from './config.js';
 
 app.controller('loginctrl', ['$scope', '$window', function($scope, $window) {
     $scope.userData = {};
@@ -7,4 +7,8 @@ app.controller('loginctrl', ['$scope', '$window', function($scope, $window) {
         const { email, password } = $scope.userData;
         loginWardConnect(email,password,$window)
     };
+
+    $scope.loginByGoogle = function() {
+        loginByGoogleAuth0($window);
+    }
 }]);

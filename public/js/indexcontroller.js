@@ -4,7 +4,7 @@ app.controller("indexctrl",['$scope', '$http', '$window','authService', function
     $scope.username = authService.getCurrentUser();
     $scope.services = [];
 
-    $http.get('https://ward-connect.onrender.com/api/services').then(function(response) {
+    $http.get('https://ap-south-1.aws.data.mongodb-api.com/app/ward-connect-bnhaj/endpoint/services').then(function(response) {
         $scope.services = response.data;
     });
 

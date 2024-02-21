@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mobilexpress">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WardConnect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/ward.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body ng-controller="adminctrl">
+    <header>
+      <nav>
+      <ul class="nav_links">
+          <li><a href="./admin.html">ADMIN</a></li>
+      </ul>
+      </nav>
+  </header>
+
+  <div class="admin">
+    <div class="adminctrl">
+        <h2>ADD LANDMARK</h2>
+        <form ng-submit="addlandmark()" method="post">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="info" ng-model="landmark.name" required>
+            </div>
+            <div>
+                <label for="type">Type:</label>
+                <input type="text" id="type" name="type" class="info" ng-model="landmark.type" required>
+            </div>
+            <div>
+                <label for="wardnumber">Ward Number:</label>
+                <input type="text" id="wardnumber" name="wardnumber" class="info" ng-model="landmark.wardnumber" required>
+            </div>
+            <div>
+                <label for="zone">Zone:</label>
+                <input type="text" id="zone" name="zone" class="info" ng-model="landmark.zone" required>
+            </div>
+            <div>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" class="info" ng-model="landmark.address" required>
+            </div>
+            <div>
+                <label for="contact">Contact:</label>
+                <input type="text" id="contact" name="contact" class="info" ng-model="landmark.contact" required>
+            </div>
+            <div>
+                <label for="imgsrc">Image:</label>
+                <input type="file" id="landmark-img" name="imgsrc" accept="image/*" class="info" required>
+            </div>
+            <button type="submit" class="modify">ADD LANDMARK</button>
+        </form>
+    </div>
+    
+    <div class="adminctrl">
+        <h2>DELETE LANDMARK</h2>
+        <form ng-submit="deletelandmark()" method="post">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="info" ng-model="landmarkdelete.name" required>
+            </div>
+            <button type="submit" class="modify">DELETE LANDMARK</button>
+        </form>
+    </div>
+    
+    <div class="adminctrl">
+        <h2>UPDATE LANDMARK</h2>
+        <form ng-submit="updateLandmark()" method="post">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="info" ng-model="updatelandmark.name" required>
+            </div>
+            <div>
+                <label for="type">Type:</label>
+                <input type="text" id="type" name="type" class="info" ng-model="updatelandmark.type" required>
+            </div>
+            <div>
+                <label for="wardnumber">Ward Number:</label>
+                <input type="text" id="wardnumber" name="wardnumber" class="info" ng-model="updatelandmark.wardnumber" required>
+            </div>
+            <div>
+                <label for="zone">Zone:</label>
+                <input type="text" id="zone" name="zone" class="info" ng-model="updatelandmark.zone" required>
+            </div>
+            <div>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" class="info" ng-model="updatelandmark.address" required>
+            </div>
+            <div>
+                <label for="contact">Contact:</label>
+                <input type="text" id="contact" name="contact" class="info" ng-model="updatelandmark.contact" required>
+            </div>
+            <button type="submit" class="modify">UPDATE LANDMARK</button>
+        </form>
+    </div>
+
+    </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.8.3/angular-messages.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-animate/1.8.3/angular-animate.min.js"></script>
+  <script type="module" src="js/admincontroller.js"></script>
+  </body>
+</html>

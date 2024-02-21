@@ -4,7 +4,7 @@ app.controller('explorectrl', ['$scope', '$http', 'authService', function($scope
     $scope.username = authService.getCurrentUser();
     $scope.landmarks = [];
 
-    $http.get('https://ward-connect.onrender.com/api/landmarks').then(function(response) {
+    $http.get('https://ap-south-1.aws.data.mongodb-api.com/app/ward-connect-bnhaj/endpoint/landmarks').then(function(response) {
         $scope.landmarks = response.data;
         $scope.applyFilters();
     });
