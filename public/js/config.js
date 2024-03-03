@@ -5,13 +5,13 @@ import { getFirestore, collection, addDoc } from "https://www.gstatic.com/fireba
 import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
 
 const firebaseConfig = {
-    apiKey: "#############################",
-    authDomain: "#########################",
-    projectId: "#########################",
-    storageBucket: "#######################",
-    messagingSenderId: "##########",
-    appId: "###################################",
-    measurementId: "#################"
+    apiKey: "AIzaSyCtHiWDVkXKjiYCBFHMJ_YsjHFUjbEhoGg",
+    authDomain: "ward-connect-madurai.firebaseapp.com",
+    projectId: "ward-connect-madurai",
+    storageBucket: "ward-connect-madurai.appspot.com",
+    messagingSenderId: "872313633985",
+    appId: "1:872313633985:web:1cc2f0d8e18944f1202840",
+    measurementId: "G-HMGFTSGQ6P"
 };
 
 const admin = initializeApp(firebaseConfig);
@@ -24,7 +24,7 @@ const provider = new GoogleAuthProvider();
 
 //PDF Gen API Integration
 const PDF_API_URL = "https://pdfgen.app/api";
-const TEMPLATE_ID = "#######";
+const TEMPLATE_ID = "a87bd42";
 
 async function pdfGenAPI(data, pdfFileName) {
     const response = await fetch(
@@ -33,7 +33,7 @@ async function pdfGenAPI(data, pdfFileName) {
             method: "POST",
             body: JSON.stringify({data}),
             headers: {
-                api_key: "#################",
+                api_key: "A-SFRH-xL3R37QBu1xfpW",
             },
         }
     );
